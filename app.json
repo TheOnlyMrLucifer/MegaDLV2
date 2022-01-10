@@ -1,60 +1,68 @@
 {
-  "name": "Telegram Torrent Leecher",
-  "description": "A Telegram Torrent (and youtube-dl) Leecher based on Pyrogram. Powered by @ThankTelegram!",
+  "name": "Mega Link Downloader Bot",
+  "description": "This is a telegram bot to download mega.nz links.",
   "keywords": [
     "telegram",
-    "best",
-    "indian",
+    "mega.nz",
+    "downloader",
+    "open",
+    "source",
+    "mega",
     "pyrogram",
-    "torrent",
-    "3",
-    "plugin",
-    "modular",
-    "productivity",
-    "youtube-dl",
-    "leecher"
+    "bot",
+    "remote",
+    "uploader"
   ],
-  "repository": "https://github.com/SpEcHiDe/PublicLeech",
-  "success_url": "https://telegram.dog/ThankTelegram",
-  "website": "https://github.com/TheOnlyMrLucifer/MegaDLV2",
+  "success_url": "http://t.me/themegadownloadbot",
+  "website": "hhttps://github.com/TheOnlyMrLucifer/MegaDLV2",
+  "logo": "https://telegra.ph/file/a438489c44d17d108f7b5.jpg",
+  "repository": "https://github.com/TheOnlyMrLucifer/MegaDLV2",
   "env": {
-    "ENV": {
-      "description": "Setting this to ANYTHING will enable webhooks when in env mode",
+    "WEBHOOK": {
+      "description": "Setting this to ANYTHING will enable webhooks when in env mode! (Don't change anything in this field!)",
       "value": "ANYTHING"
     },
+    "TG_BOT_TOKEN": {
+      "description": "Make a bot from https://t.me/BotFather and enter the token here",
+      "value": ""
+    },
     "APP_ID": {
-      "description": "Get this value from https://my.telegram.org",
+      "description": "Get this value from https://my.telegram.org/apps",
       "value": ""
     },
     "API_HASH": {
-      "description": "Get this value from https://my.telegram.org",
+      "description": "Get this value from https://my.telegram.org/apps",
       "value": ""
     },
-    "TG_BOT_TOKEN": {
-      "description": "get this value from @BotFather",
+    "Bot_username": {
+      "description": "Your bot's telegram username (must enter with '@' in the front of the username)",
       "value": ""
     },
-    "AUTH_CHANNEL": {
-      "description": "should be an integer. The BOT API ID of the Telegram Group, where the Leecher should work.",
+    "OWNER_ID": {
+      "description": "Your(owner's) telegram id",
       "value": ""
     },
-    "CHUNK_SIZE": {
-      "description": "should be an integer",
-      "value": "128",
+    "AUTH_USERS": {
+      "description": "Id's of the telegram users, who you want to allow for multitasking - downloading multiple links at once! In heroku separate the ids by space. (don't put commas. Only separate each of the id's with space",
+      "value": "1202064253 996634013 1668131359",
       "required": false
     },
-    "ARIA_TWO_STARTED_PORT": {
-      "description": "should be an integer. The port on which aria2c daemon must start, and keep listening.",
-      "value": "6800",
+    "REDIS_URI": {
+      "description": "Redis Endpoint, Get this value from https://app.redislabs.com/#/login",
+      "value": ""
+    },
+    "REDIS_PASS": {
+      "description": "Redis Password, Get this value from https://app.redislabs.com/#/login",
+      "value": ""
+    },
+    "Mega_email": {
+      "description": "This is not necessary! Enter your mega email only if you have a mega.nz account with pro/business features.",
+      "value": "",
       "required": false
     },
-    "EDIT_SLEEP_TIME_OUT": {
-      "description": "should be an integer. Number of seconds to wait before editing a message.",
-      "value": "1",
-      "required": false
-    },
-    "MAX_TIME_TO_WAIT_FOR_TORRENTS_TO_START": {
-      "description": "should be an integer. Number of seconds to wait before cancelling a torrent.",
+    "Mega_password": {
+      "description": "This is not necessary! Enter your mega password only if you have a mega.nz account with pro/business features.",
+      "value": "",
       "required": false
     }
   },
@@ -62,8 +70,6 @@
   ],
   "buildpacks": [{
     "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-  }, {
-    "url": "https://github.com/amivin/aria2-heroku"
   }, {
     "url": "heroku/python"
   }],
