@@ -18,7 +18,7 @@ Just enter your mega.nz link and I will return the file/video to you!😇
 
 Press /help for more details!
 
-✨ <b>A Project By @SLBotsOfficial</b>"""
+✨ <b>A Project By WikiLeaks @TheOnlyMrLucifer</b>"""
     
     DOWNLOAD_START = "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗶𝗻𝗴 𝘁𝗼 𝗠𝘆 𝗦𝗲𝗿𝘃𝗲𝗿📥"
     UPLOAD_START = "𝗨𝗽𝗹𝗼𝗮𝗱𝗶𝗻𝗴 𝗧𝗼 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺 𝗡𝗼𝘄  📤"
