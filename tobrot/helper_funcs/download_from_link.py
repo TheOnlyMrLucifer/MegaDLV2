@@ -2,12 +2,24 @@
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K
 
-import asyncio
+# the logging things
 import logging
-import os
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
+LOGGER = logging.getLogger(__name__)
+
+
+import asyncio
 import time
 
-from tobrot import DOWNLOAD_LOCATION, LOGGER
+import os
+
+from tobrot import (
+    DOWNLOAD_LOCATION
+)
 
 
 async def request_download(url, file_name, r_user_id):
@@ -16,7 +28,12 @@ async def request_download(url, file_name, r_user_id):
     if not os.path.isdir(directory_path):
         os.makedirs(directory_path)
     local_file_path = os.path.join(directory_path, file_name)
-    command_to_exec = ["wget", "-O", local_file_path, url]
+    command_to_exec = [
+        "wget",
+        "-O",
+        local_file_path,
+        url
+    ]
     process = await asyncio.create_subprocess_exec(
         *command_to_exec,
         # stdout must a pipe to be accessible as process.stdout
