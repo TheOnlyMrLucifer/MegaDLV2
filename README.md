@@ -1,122 +1,186 @@
-# Mega.nz to GDrive uploader
-
-With this telegram bot you can **download files/folders from [mega.nz](https://mega.nz) and upload those files/folders or telegram uploaded files to [GDrive](https://drive.google.com)**. **You can even upload telegram uploaded files to [mega.nz](https://mega.nz)**. This TG bot is **heroku** based. Now before you continue i recommend you to read [**Prerequisites**](https://github.com/whitehatjrchintu/mega-to-gdrive-bot#Prerequisites-) section and [**What this bot can do?**](https://github.com/whitehatjrchintu/mega-to-gdrive-bot#What-this-bot-can-do) section.
-
-## Can it download files over 5GiB?
-
-- Yes it can download. But for downloading files over 5GiB you have to wait for 5-6 hours or 10-12 hours after transfer quota exceeds. After completing 5-6 hours it will automatically download that file and after completing download it will ask you for uploading that file on GDrive. See proofs here:-
-
-screenshot 1 | screenshot 2
---- | ---
-![photo_2021-10-20_15-46-43](https://user-images.githubusercontent.com/74552895/138076069-32ead8cf-9a9e-41c9-9c92-0b5cb9211d60.jpg) | ![photo_2021-10-20_15-46-51](https://user-images.githubusercontent.com/74552895/138076094-4c87987c-46e6-4a49-8b7d-494d5c56f10f.jpg)
-
-## Prerequisites:-
-<details>
-<summary>
-  :information_source: Important information.
-</summary>
-
-  1. Create account on [GitHub](https://www.github.com) (if you haven't).
-  2. Create account on [mega.nz](https://mega.nz) (if you haven't).
-  3. Create account on [Heroku](https://dashboard.heroku.com) (if you haven't).
-  4. Create account on [Telegram](https://web.telegram.org) (if you haven't).
-  5. Create account on [Gmail](https://mail.google.com) (if you haven't for only this script).
-  6. Go to [my.telegram.org/auth](https://my.telegram.org/auth), login and create app. Check [how to create app on telegram](https://core.telegram.org/api/obtaining_api_id). Now save api_id and api_hash which you got from [my.telegram.org/auth](https://my.telegram.org/auth).
-  7. Create a telegram bot by using [Bot Father](https://t.me/botfather). Check [how to create bot in telegram](https://core.telegram.org/bots#3-how-do-i-create-a-bot). [Bot Father](https://t.me/botfather) will give you bot token save that token.
-  8. Create **Google Drive API key** from your above created gmail account. Read [this article's](https://medium.com/analytics-vidhya/how-to-connect-google-drive-to-python-using-pydrive-9681b2a14f20) **Getting Your API Key** and **Saving Your Credentials** section for getting two file named **client_secrets.json** and **mycreds.txt**.
-  9. Search **@chatid_echo_bot** in telegram (This bot is not mine. You can google how to get chat id in telegram.) and click start this will give you your **telegram user_id**.
-  10. So now you have saved **six** things:-
-		- api_id
-		- api_hash
-		- bot_token
-		- client_secrets.json
-		- mycreds.txt
-		- telegram user_id
-
-</details>
-
-## How to use?
-<details>
-  <summary>
-    Steps to use.
-  </summary>
-	
-#### Step 1:
-- Just git clone this repository.
-
-   `git clone https://github.com/whitehatjrchintu/mega-to-gdrive-bot.git`
-   
-   `cd mega-to-gdrive-bot`
-
-- Or download this [repository](https://github.com/whitehatjrchintu/mega-to-gdrive-bot/archive/main.zip) as zip.
-#### Step 2:
-- After cd or unzip upload **client_secrets.json** and **mycreds.txt** files, which we download in **step 8** of **Prerequisites**, in that folder.
-#### Step 3:
-- Now create repository (i will recommend to create private repository.) in your github account and upload all files and folders.
-#### Step 4:
-- Copy your github repository's link and paste after **?template=** in this link `https://www.heroku.com/deploy/?template=`. Like this:-
-
-   `https://www.heroku.com/deploy/?template=https://github.com/TheOnlyMrLucifer/MegaDLV2`
-#### Step 5:
-- Now enter App name in **app_name** and **api_id**, **api_hash**, **bot_token**, **mega.nz email**, **mega.nz password** and your **telegram user_id** which you saved in above steps, in **respective** asked field. Then click **Deploy app**.
-#### Step 6:
-- Finally go to your bot, click start button, send **#login** command and this will login into [mega.nz](https://mega.nz).
-</details>
-
-## What this bot can do?
-<details>
-	<summary>
-		Full Details
-	</summary>
-
-- You can operate your [mega.nz](https://mega.nz) account with this bot.
-- You can list files that are uploaded on your [mega.nz](https://mega.nz) account. Just use **#ls** command.
-- You can remove any file from your [mega.nz](https://mega.nz) account. Just use **#rm file_name** command.
-- You can download your own [mega.nz](https://mega.nz) files. Just use **#get file_name** command.
-- You can use **#other** command for executing other [mega.nz commands](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md). Such as:- **#other mv old_name.mp4 new_name.mp4**, **#other cp orignal.mp4 copied.mp4** etc.
-- You can download other [mega.nz](https://mega.nz) files to telegram. Just send https://mega.nz/the_other_file_url it will send that file to your telegram.
-- You can download other [mega.nz](https://mega.nz) folders to telegram. Just send https://mega.nz/the_other_file_url it will send that folder's zip file to your telegram.
-- You can upload [mega.nz](https://mega.nz) uploaded files to GDrive. Just send https://mega.nz/the_other_file_url it will ask you.
-- You can upload [mega.nz](https://mega.nz) uploaded folders to GDrive. Just send https://mega.nz/the_other_file_url it will ask you.
-	
-where to upload mega.nz file? | mega.nz folder uploaded to telegram as zip file
---- | ---
-![photo_2021-10-20_15-46-43](https://user-images.githubusercontent.com/74552895/137736579-1713d5e9-c5aa-4aaf-bf25-221515cac16d.PNG) | ![photo_2021-10-20_15-46-51](https://user-images.githubusercontent.com/74552895/147825235-274d0879-490e-4e31-8626-191c4fbb7593.PNG)
-
-- You can upload telegram uploaded files to [mega.nz](https://mega.nz). Just **forward** the telegram upload file to the bot.
-- You can upload telegram uploaded files to GDrive. Just **forward** the telegram upload file to the bot.
-
-	![forward](https://user-images.githubusercontent.com/74552895/137737105-a09261c4-89e0-4b1d-807c-46180cfd8fb8.PNG)
-
-- You can import other [mega.nz](https://mega.nz) files and folders to your account. Use **#import https://mega.nz/the_other_file_url** command.
 
 
-### Please note spaces are sensitive here so use double quotes if your file have spaces in its name. Example:- 
+# Telegram Torrent and Direct links Leecher 
 
-|correct &check;|wrong &cross;|
-|---|---|
-|#rm "my video.mp4"|#rm my video.mp4|
-|#other mv "my video with spaces.mp4" my_video_without_spaces.mp4|#other mv my video with spaces.mp4 my_video_without_spaces.mp4|
 
-</details>
 
-<details>
-	<summary>
-		List of commands
-	</summary>
-	
+### Dont Abuse The Repo ... this is intented to run in Small Places or For Short time 😐
 
-|commands|mean|
-|---|---|
-|#login|for login into mega.nz|
-|#ls|list files that are in your mega.nz account.|
-|#import mega.nz url|directly import another mega.nz file to your account. no download no upload for mega to mega.|
-|#get file_name|download your own mega.nz file and will ask you where to upload that file.|
-|#rm file_name|remove file from your mega.nz account.|
-|#other mega commands|execute other [mega.nz commands](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md) with the help of this command. mean operate your mega.nz account on telegram|
-|url of mega.co.nz or mega.nz|this will download file from mega.nz automatically and will ask you where to upload that file. this will also download folder from mega.nz,then zip that folder and will ask you where to upload that zip file.|
-	
-</details>
+## A Telegram Torrent , Direct Links (and youtube-dl) Leecher based on [Pyrogram](https://github.com/pyrogram/pyrogram)
 
-### If you found any mistake or have any suggestion let me know i will correct/apply that.	
-## Meant for educational purpose only. I am not responsible if mega or telegram block your account.
+# Benefits :-
+    ✓ Google Drive link cloning using gclone.(wip)
+    ✓ Telegram File mirrorring to cloud along with its unzipping, unrar and untar
+    ✓ Drive/Teamdrive support/All other cloud services rclone.org supports
+    ✓ Unzip
+    ✓ Unrar
+    ✓ Untar
+    ✓ Custom file name
+    ✓ Custom commands
+    ✓ Get total size of your working cloud directory
+    ✓ You can also upload files downloaded from /ytdl command to gdrive using `/ytdl gdrive` command.
+    ✓ You can also deploy this on your VPS
+    ✓ Option to select either video will be uploaded as document or streamable
+    ✓ Added /renewme command to clear the downloads which are not deleted automatically.
+    ✓ Added support for youtube playlist 😐
+    ✓ Renaming of Telegram files support added. 😐
+    ✓ Changing rclone destination config on fly (By using `/rlcone` in private mode)
+    
+## Some Other Features You will Find In this fork :-
+    ✓ Aria2 configs In Root
+    ✓ Small FIx for Gclone
+    ✓ Unzip error Fixed
+    ✓ Heroku Workflow Added
+    ✓ UI mod Added for Improved User Experience
+    ✓ Added Dynamic Config 
+    ✓ Added Custom ToggleDoc and ToggleVid Cmd
+    ✓ Added Custom Rename Command via vars
+    
+# TO-DO
+-   ~Gdrive file clonning using Gclone~ `DONE ✓`
+-   [ ] Adding mp3 files support while playlist downloading.
+-   [ ] Password support while Unarchiving the files.
+-   [ ] Selection of required files during leeching the big files using aria(/leech command)
+
+                                                                         
+## Deploying on Heroku
+Click on the below button 👇👇👇👇
+<p><a href="https://heroku.com/deploy"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
+
+
+## Variable Explanations 👇
+
+---
+### Required Environmental Variables... MUST BE GIVEN....
+
+| Variable | Value | Example | Required | Description |
+| :---: | :---: | :---: | :---: | :---: |
+| TG_BOT_TOKEN | Telegram Bot Token | your telegram bot api key/token | True | Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the  API token. |
+| APP_ID | Telegram APP_ID | Your TG account's APP_ID | True | Get this value from [TELEGRAM](https://my.telegram.org/apps). |
+| API_HASH | Telegram API_HASH | Your TG account's API_HASH | True | Get this value from [TELEGRAM](https://my.telegram.org/apps). |
+| OWNER_ID | TG account's ID | Your TG account's ID | True | ID of the bot owner, He/she can be abled to access bot in bot only mode too(private mode). |
+| AUTH_CHANNEL | Authorized Chats | Your Group Chats ID | True | Create a Super Group in Telegram, add `@RIRURU_ROBOT` to the group, and send /id in the chat, to get this value. |
+---
+
+
+### Optional Configuration Variables--Not Mandatory
+
+Optional Configuration Variables | Descripion
+------------ | -------------
+| `DOWNLOAD_LOCATION` | dev
+| `MAX_FILE_SIZE` | useless
+| `TG_MAX_FILE_SIZE` | max file size limit for Telegram Upload .. value should be in bytes like `2000000000`
+| `FREE_USER_MAX_FILE_SIZE` | useless
+| `MAX_TG_SPLIT_FILE_SIZE` | max file size limit for Telegram Upload in Splitting.. Like If you send 10gb file it will send in 2gb pieces..value should be in bytes like `2000000000`
+| `CHUNK_SIZE` | dev default value is `128`
+| `MAX_MESSAGE_LENGTH` | dev
+| `PROCESS_MAX_TIMEOUT` | dev
+| `ARIA_TWO_STARTED_PORT` | should be an integer. The port on which aria2c daemon must start, and keep listening ..default is port `6800`
+| `EDIT_SLEEP_TIME_OUT` | should be an integer. Number of seconds to wait before editing a message.
+| `MAX_TIME_TO_WAIT_FOR_TORRENTS_TO_START` | should be an integer. Number of seconds to wait before cancelling a torrent.
+| `FINISHED_PROGRESS_STR` | change the progress bar
+| `UN_FINISHED_PROGRESS_STR` | change the progress bar
+| `TG_OFFENSIVE_API` | dev
+| `CUSTOM_FILE_NAME` | custom filename for every single files or folders on leeching completion...
+| `LEECH_COMMAND` | custom command for `/leech`
+| `YTDL_COMMAND` | custom command for `/ytdl`
+| `GYTDL_COMMAND` | custom command for `/gytdl`
+| `GLEECH_COMMAND` | custom command for `/gleech`
+| `TELEGRAM_LEECH_COMMAND` | custom command for `/tleechzip`
+| `TELEGRAM_LEECH_UNZIP_COMMAND` | custom command for `/tleechunzip`
+| `PYTDL_COMMAND` | custom command for `/pytdl`
+| `CLONE_COMMAND_G` | custom command for `/gclone`
+| `UPLOAD_COMMAND` | custom command for `/upload` 
+| `RENEWME_COMMAND` | custom command for `/renewme`
+| `SAVE_THUMBNAIL` | custom command for `/savethumbnail`
+| `CLEAR_THUMBNAIL` | custom command for `/clearthumbnail`
+| `GET_SIZE_G` | custom command for `/getsize`
+| `UPLOAD_AS_DOC` | Takes two option True or False. If True file will be uploaded as document. This is for people who wants video files as document instead of streamable.
+| `INDEX_LINK` | (Without / at last of the link, otherwise u will get error) During creating index, plz fill Default Root ID with the id of your DESTINATION_FOLDER after creating. Otherwise index will not work properly.
+| `DESTINATION_FOLDER` |  Name of your folder in ur respective drive where you want to upload the files using the bot.
+| `RENAME_COMMAND` | Custom Rename Command Which should Be Set Via Vars Default is `/rename`
+| `TOGGLE_VID` | Custom Cmd for TOGGLE_DOC default is `/togglevid`
+| `TOGGLE_DOC` | Custom Cmd for TOGGLE_DOC default is `/toggledoc`
+| `RCLONE_COMMAND` | Custom command for `/rclone`
+| `LOG_COMMAND` | Custom command for `/log`
+| `HELP_COMMAND` | Custom command for `/help`
+
+---
+
+
+### Set Rclone
+
+1. Set Rclone locally by following the official repo : https://rclone.org/docs/
+2. Get your `rclone.conf` file.
+will look like this
+```
+[NAME]
+type = 
+scope =
+token =
+client_id = 
+client_secret = 
+
+```
+2 Copy `rclone.conf` file in the root directory (Where `Dockerfile` exists).
+
+3 Your config can contains multiple drive entries.(Default: First one and change using `/rclone` command)
+
+
+---
+## Available Commands For The BOT
+
+Available BOT  Commands | Usage
+------------ | -------------
+|`/rclone`| This will change your drive config on fly.(First one will be def `/gclone`..This command is used to clone gdrive files or folder using gclone.-Syntax- `[ID of the file or folder][one space][name of your folder only(If the id is of file, don't put anything)]` and then reply /gclone to it.\
+|`/log`| This will send you a txt file of the logs.
+|`/ytdl`| This command should be used as reply to a [supported link](https://ytdl-org.github.io/youtube-dl/supportedsites.html)
+|`/pytdl`| This command will download videos from youtube playlist link and will upload to telegram.
+|`/gytdl`| This will download and upload to your cloud.
+|`/gpytdl`| This download youtube playlist and upload to your cloud.
+|`/leech`| This command should be used as reply to a magnetic link, a torrent link, or a direct link. this command will SPAM the chat and send the downloads a seperate files, if there is more than one file, in the specified torrent
+|`/leechzip`| This command should be used as reply to a magnetic link, a torrent link, or a direct link. [This command will create a .tar.gz file of the output directory, and send the files in the chat, splited into PARTS of 1024MiB each, due to Telegram limitations]
+|`/gleech`| This command should be used as reply to a magnetic link, a torrent link, or a direct link. And this will download the files from the given link or torrent and will upload to the cloud using rclone.
+|`/gleechzip` | This command will compress the folder/file and will upload to your cloud.
+| `/leechunzip`| This will unarchive file and dupload to telegram.
+|`/gleechunzip`| This will unarchive file and upload to cloud.
+|`/tleech`| This will mirror the telegram files to ur respective cloud cloud.
+|`/tleechunzip`| This will unarchive telegram file and upload to cloud.
+|`/getsize`| This will give you total size of your destination folder in cloud.
+|`/renewme`| This will clear the remains of downloads which are not getting deleted after upload of the file or after /cancel command.
+| `/rename`| u can add custom name as prefix of the original file name...Like if your file name is `gk.txt` uploaded will be what u add in `CUSTOM_FILE_NAME` + `gk.txt`..And also added custom name like...You have to pass link as ..`www.download.me/gk.txt new.txt`..the file will be uploaded as `new.txt`.
+| `/toggledoc` | it used for toggling to be files if shall it be uploaded as doc via direct inchat cmd...**any users can now choose if their files will be upload as doc or streamabe...**
+| `/togglevid` | it used for toggling to be files if shall it be uploaded as vid via direct inchat cmd...**any users can now choose if their files will be upload as doc or streamabe...**
+---
+## END OF Variable Explanations 👆
+
+---
+## 🔧Commands to be set via Botfather (will only work if you set mentions from custom cmds).
+     gclone - This command is used to clone gdrive files or folder using gclone
+     ytdl - This command should be used as reply to a supported link
+     pytdl - This command will download videos from youtube playlist link and will upload to telegram.
+     gytdl - This will download and upload to your cloud.
+     gpytdl - This download youtube playlist and upload to your cloud.
+     leech - leech any torrent/magnet/direct-download link to Telegram
+     leechzip - leech any torrent/magnet/direct-download link to Telegram and Upload It as .tar.gz acrhive...
+     gleech - leech any torrent/magnet/direct-download link to cloud
+     gleechzip - leech any torrent/magnet/direct-download link to Cloud and Upload It as .tar.gz acrhive...
+     leechunzip - This will unarchive file and upload to telegram.
+     gleechunzip - This will unarchive file and upload to cloud.
+     tleech - This will mirror the telegram files to ur respective cloud .
+     tleechunzip - This will unarchive telegram file and upload to cloud.
+     getsize - This will give you total size of your destination folder in cloud.
+     rename - rename the file
+     toggledoc - choose whether the file shall be uploaded as doc or not
+     togglevid - choose whether the file shall be uploaded as streamable or not	 
+     help - send help 
+     renewme - clear all downloads (admin only)⚠️
+     log - This will send you a txt file of the logs.(admin only)⚠️
+     rclone - This will change your drive config on fly.(First one will be default)--(admin only)⚠️
+---
+## How to Use?
+
+### send any one of the available command, as a reply to a valid link/magnet/torrent. 
+
+## Credits, and Thanks to
+* HM_MODS FOR CREATING
